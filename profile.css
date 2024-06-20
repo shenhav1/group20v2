@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+    padding-bottom: 50px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #e39e61;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #e39e61;
+}
+
+.profile-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #edebeb;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-picture img {
+    border-radius: 5%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    background: url('https://dafdafim.co.il/wp-content/uploads/2021/10/detskie-raskraski-papa31.jpg');
+}
+
+.userLocation {
+    margin-bottom: 35px;
+}
+
+.about {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.message-me-button {
+    display: block;
+    width: max-content;
+    padding: 10px 20px;
+    margin: 40px auto;
+    color: #fff;
+    background: #e39e61;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.message-me-button:hover {
+    background: #e39e61;
+}
+
+.tabs {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    justify-content: start;
+}
+
+.tabs li {
+    margin-right: 20px;
+}
+
+.tabs li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: inline-block;
+}
+
+.tabs li a:hover,
+.tabs li a:focus {
+    color: #e39e61;
+    border-bottom: 2px solid #e39e61;
+}
+
+.treatment {
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.Suggested treatments {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.treatment {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.treatment-title {
+    font-size: 1em;
+    color: #000;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.treatment-location {
+    font-size: 14px;
+    color: #555;
+}
+
+.details-button {
+    display: inline-block;
+    background-color: #e39e61;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.details-button:hover {
+    background-color: #e39e61;
+}
+
+
+
+footer {
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: 20px 10%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-container {
+        margin: 10px;
+    font-size: 13px;
+}
+
+.footer-container p {
+    margin: 0;
+    color: #333;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

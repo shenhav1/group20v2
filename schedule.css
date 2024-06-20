@@ -1,0 +1,105 @@
+
+body {
+  font-family: 'Lucida Grande', Arial, sans-serif;
+    background: #f4f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #e39e61;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #e39e61;
+}
+
+
+.treatment-form {
+    background: linear-gradient(to left, #ddac98, #e1b886);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.treatment-form h2 {
+    margin-bottom: 20px;
+}
+
+.treatment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: auto;
+}
+
+.treatment-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.treatment-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: beige;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.treatment-form button:hover {
+    background-color: black;
+    color: beige;
+}
+
+
+footer {
+    color: black;
+    text-align: left;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+.footer-container {
+        margin: 10px;
+    font-size: 13px;
+}

@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding:0;
+        box-sizing: border-box;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+}
+
+body {
+
+    background: snow;
+    background-size: cover;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    margin: 0;
+    width: 100%;
+    flex-grow: 30;
+        justify-items: left;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+ header h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #e39e61;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #e39e61;
+}
+.container1 {
+    color: #e39c61;
+    display: grid;
+    place-items: self-start;
+    height: 80vh;
+    padding: 25px;
+    width: 100%;
+    font-size: 20px;
+    flex: 1;
+    margin-bottom: 2%;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+}
+.search {
+        color: #e39c61;
+    font-family: 'Lucida Grande', Arial, sans-serif ;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    width: 100%;
+    justify-items: start;
+
+
+}
+
+.search_input {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: start;
+}
+
+.search_input p {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    font-size: 20px;
+}
+
+
+button {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    padding: 10px;
+    background-color: #e39c61;
+    color: gray;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    background-color: gray;
+    color: #e39c61;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.footer-container {
+        margin: 10px;
+    font-size: 13px;
+
+}
+
+img {
+    position: absolute;
+    top: 200px;
+    right: 130px;
+     max-width: 400px;
+  max-height: 300px;
+}
