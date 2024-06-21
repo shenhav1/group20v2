@@ -18,7 +18,7 @@ header {
     align-items: center;
     padding: 20px 10%;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -60,7 +60,7 @@ nav ul li a:focus {
     margin: 40px auto;
     background: #edebeb;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .profile-sidebar {
@@ -148,7 +148,7 @@ nav ul li a:focus {
     border: 1px solid #ddd;
     padding: 10px;
     background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -189,7 +189,6 @@ nav ul li a:focus {
 }
 
 
-
 footer {
     width: 100%;
     background-color: #f7f7f7;
@@ -202,7 +201,7 @@ footer {
 }
 
 .footer-container {
-        margin: 10px;
+    margin: 10px;
     font-size: 13px;
 }
 

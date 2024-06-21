@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
-    padding:0;
-        box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Lucida Grande', Arial, sans-serif;
 }
+
 body {
     background: url('https://www.yozma4u.co.il/files//iStock_672310454.jpg');
     background-size: cover;
@@ -12,7 +13,7 @@ body {
     margin: 0;
     width: 100%;
     flex-grow: 20;
-        justify-items: center;
+    justify-items: center;
 }
 
 header {
@@ -21,7 +22,7 @@ header {
     align-items: center;
     padding: 20px 10%;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -117,7 +118,7 @@ nav ul li a:focus {
 }
 
 .container1 {
-    background: linear-gradient(to left, lightgray,lightgoldenrodyellow);
+    background: linear-gradient(to left, lightgray, lightgoldenrodyellow);
     max-width: 800px;
     padding-right: 200px;
     padding-left: 100px;
@@ -131,8 +132,9 @@ nav ul li a:focus {
     margin-left: auto;
     margin-right: auto;
 }
+
 .footer-container {
-        margin: 10px;
+    margin: 10px;
     font-size: 13px;
 
 }

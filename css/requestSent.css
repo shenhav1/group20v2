@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lucida Grande', Arial, sans-serif;
+    font-family: 'Lucida Grande', Arial, sans-serif;
     background: #f4f1f1;
     display: flex;
     justify-content: center;
@@ -9,10 +9,10 @@ body {
 }
 
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 nav ul {
