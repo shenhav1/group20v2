@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (validateEmail(email) && validatePassword(password)) {
             alert('Sign-in successful!');
-                    window.location.href = "userProfile.html"
+            window.location.href = "userProfile.html"
             // Here you can add logic to redirect the user to another page or handle the sign-in process
             // For example: window.location.href = 'userProfile.html';
         } else {

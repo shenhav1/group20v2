@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
 
-    contactForm.addEventListener('submit', function(event) {
+    contactForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const name = document.getElementById('name').value.trim();
@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Simulate form submission (e.g., send data to server)
-        console.log('Form submitted successfully:', { name, email, message });
+        console.log('Form submitted successfully:', {name, email, message});
 
         // Reset form
         contactForm.reset();
 
         // Show success message
         alert('Thank you for your message! We will get back to you soon.');
-                    window.location.href = "requestSent.html"
+        window.location.href = "requestSent.html"
 
     });
 

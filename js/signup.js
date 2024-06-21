@@ -1,10 +1,10 @@
 // signup.js
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var signupForm = document.querySelector('.signupContainer');
 
     if (signupForm) {
-        signupForm.addEventListener('submit', function(event) {
+        signupForm.addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent default form submission
 
             // Validate form

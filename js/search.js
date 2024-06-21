@@ -1,6 +1,6 @@
 // script.js
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Find the form and inputs
     var searchForm = document.querySelector('.formContainer');
     var searchByNameInput = document.getElementById('searchByName');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add submit event listener to the form
     if (searchForm) {
-        searchForm.addEventListener('submit', function(event) {
+        searchForm.addEventListener('submit', function (event) {
             // Prevent the form from submitting and refreshing the page
             event.preventDefault();
 

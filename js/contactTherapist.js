@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Example: Clear form after submission (you can implement this)
         contactForm.reset();
-                alert('Thank you for your message! We will send the massage to the therapist');
+        alert('Thank you for your message! We will send the massage to the therapist');
         window.location.href = "homePage.html";
 
     });

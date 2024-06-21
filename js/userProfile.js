@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Example: Handling future treatments status update
     const futureTreatments = [
-        { treatment: 'Psychological Evaluation', status: 'Approved' },
-        { treatment: 'Physical Therapy', status: 'denied' },
-        { treatment: 'Massage', status: 'Awaiting Approval' }
+        {treatment: 'Psychological Evaluation', status: 'Approved'},
+        {treatment: 'Physical Therapy', status: 'denied'},
+        {treatment: 'Massage', status: 'Awaiting Approval'}
     ];
 
     function updateFutureTreatments(treatments) {
