@@ -1,0 +1,90 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+}
+
+body {
+    background: #f3cbbb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #e39e61;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #e39e61;
+}
+
+.container {
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.footer-container {
+    margin-top: 20px;
+    font-size: 13px;
+    text-align: center;
+    color: #888;
+}
