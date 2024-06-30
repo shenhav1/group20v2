@@ -87,23 +87,6 @@ nav ul li a:focus {
     margin-bottom: 40px;
 }
 
-.message-me-button {
-    display: block;
-    width: max-content;
-    padding: 10px 20px;
-    margin: 40px auto;
-    color: #fff;
-    background: #e39e61;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.message-me-button:hover {
-    background: #e39e61;
-}
 
 .tabs {
     list-style-type: none;
@@ -173,7 +156,23 @@ nav ul li a:focus {
     color: #555;
 }
 
-.details-button {
+/*button {*/
+/*    display: block;*/
+/*    width: max-content;*/
+/*    padding: 10px 20px;*/
+/*    margin: 40px auto;*/
+/*    color: #fff;*/
+/*    background: #e39e61;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    text-align: center;*/
+/*    text-decoration: none;*/
+/*    transition: background 0.3s ease;*/
+/*}*/
+
+
+
+button {
     display: inline-block;
     background-color: #e39e61;
     color: white;
@@ -184,9 +183,11 @@ nav ul li a:focus {
     font-size: 14px;
 }
 
-.details-button:hover {
-    background-color: #e39e61;
+button:hover {
+    background: #e39e61;
 }
+
+
 
 
 footer {
