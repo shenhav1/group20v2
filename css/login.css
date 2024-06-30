@@ -1,5 +1,10 @@
 body {
     background: url('https://www.yozma4u.co.il/files//iStock_672310454.jpg');
+     display: flex;
+    justify-content: center;
+    line-height: 1.5;
+    margin-top: 12vh;
+        min-height: 100vh;
 
     header {
         display: flex;

@@ -1,49 +1,18 @@
-
-body {
-    font-family: 'Lucida Grande', Arial, sans-serif;
-    background: #f4f1f1;
+body{
+    background: url('https://img.joomcdn.net/239d86bb1341d99335834393e5bfe9fd6c18dcd6_original.jpeg');
+    background-size: cover;
+     background-attachment: fixed;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+    line-height: 1.5;
+    margin-top: 12vh;
+        min-height: 100vh;
 
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
 }
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #e39e61;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-    background-color: #e39e61;
-}
-
 
 .treatment-form {
-    background: linear-gradient(to left, #ddac98, #e1b886);
-    padding: 20px;
+    background: linear-gradient(to left, #f4f1f1, #f1e5d5);
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 400px;
@@ -84,23 +53,4 @@ nav ul li a:focus {
 .treatment-form button:hover {
     background-color: black;
     color: beige;
-}
-
-
-footer {
-    color: black;
-    text-align: left;
-    padding: 10px 0;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-}
-
-footer p {
-    margin: 0;
-}
-
-.footer-container {
-    margin: 10px;
-    font-size: 13px;
 }

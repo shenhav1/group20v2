@@ -1,16 +1,14 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lucida Grande', Arial, sans-serif;
-}
-
 body {
     background: #f3cbbb;
     display: flex;
     flex-direction: column;
     position: relative;
+     display: flex;
+    justify-content: center;
+    line-height: 1.5;
+    margin-top: 12vh;
+        min-height: 100vh;
 }
 
 header {
