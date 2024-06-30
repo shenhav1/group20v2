@@ -4,25 +4,12 @@
     <meta charset="UTF-8">
     <title>Sign up</title>
     <link rel="stylesheet" type="text/css" href="../css/signup.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="homePage.html">Home</a></li>
-            <li><a href="login.html">Log in</a></li>
-            <li><a href="signup.html">Sign up</a></li>
-            <li><a href="search.html">Search</a></li>
-            <li><a href="contactUs.html">Contact Us</a></li>
-
-
-        </ul>
-    </nav>
-</header>
-
 <div class="container1">
-    <form class="signupContainer">
+    <form class="signupContainer" onsubmit="return validateForm()">
         <h1>
             Sign up
         </h1>
@@ -32,13 +19,23 @@
             <br>
         </div>
         <div class="signup">
-            <label for="Name">Name:</label>
-            <input type="text" id="Name" name="Name" required placeholder="Name">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="First Name">
+            <br>
+        </div>
+        <div class="signup">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Last Name">
             <br>
         </div>
         <div class="signup">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required placeholder="Password">
+            <br>
+        </div>
+        <div class="signup">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm Password">
             <br>
         </div>
         <div class="signup">
@@ -95,34 +92,31 @@
         <div class="signup">
             <label for="phoneNumber">Phone Number:</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required
-                   placeholder="phoneNumber">
+                   placeholder="Phone Number">
             <br>
         </div>
         <div class="signup">
             <label for="dob">Birthday:</label>
-            <input type="date" id="dob" name="dob" required placeholder="dob">
+            <input type="date" id="dob" name="dob" required placeholder="DOB">
             <br>
         </div>
 
         <div class="signup">
-            <label for="entitlement">entitlement:</label>
+            <label for="entitlement">Entitlement:</label>
             <select id="entitlement" name="entitlement">
                 <option value="">-- Select entitlement --</option>
-                <option value="reservist">reservist</option>
-                <option value="comando reservist">comando reservist</option>
-                <option value="evacuee">evacuee</option>
-                <option value="bereaved person">bereaved person</option>
-                <option value="handicapped person">handicapped person</option>
-                <option value="none">none</option>
+                <option value="reservist">Reservist</option>
+                <option value="commando reservist">Commando Reservist</option>
+                <option value="evacuee">Evacuee</option>
+                <option value="bereaved person">Bereaved Person</option>
+                <option value="handicapped person">Handicapped Person</option>
+                <option value="none">None</option>
             </select>
             <br>
         </div>
         <div>
-            <!--            <button id="signupBtn" type="submit" name="submit" aria-label="Sign up">Sign up</button>-->
             <button class="signButton" id="signInButton" type="submit" name="submit" aria-label="Sign Up">Sign Up
             </button>
-
-
         </div>
         <p>or sign up with:</p>
         <div class="social-login">
@@ -134,11 +128,12 @@
 
 <footer>
     <div class="footer-container">
-        <p> Happy Soul ©</p>
+        <p>© 2024 Happy Soul. All rights reserved.</p>
     </div>
 </footer>
 
 <script src="../js/signup.js"></script>
+
 
 </body>
 </html>
