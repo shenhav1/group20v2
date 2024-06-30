@@ -1,42 +1,21 @@
-
 body {
     background: url('https://www.yozma4u.co.il/files//iStock_672310454.jpg');
-    background-size: cover;
-    font-size: 13px;
-    margin: 0;
-    margin-top: 20px;
-    width: 100%;
-    justify-items: center;
 
-
-    @keyframes slideInFromLeft {
-        0% {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideInFromRight {
-        0% {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
     }
 
 
     .signInContainer {
         display: grid;
-        justify-items: center;
+        text-align: left;
+        justify-items: start;
         align-items: center;
         font-family: 'Lucida Grande', Arial, sans-serif;
         border: 4px solid rgba(243, 223, 142, 0.74);
@@ -44,13 +23,14 @@ body {
         border-radius: 8%;
         margin: auto;
         width: 50%;
-        padding: 20px;
+        padding: 60px;
         font-size: 15px;
     }
 
     .signInContainer h2 {
         font-size: 30px;
         margin: 20px;
+        text-align: center;
     }
 
     .signIn {
@@ -85,36 +65,35 @@ body {
         font-family: 'Lucida Grande', Arial, sans-serif;
     }
 
-    .container2 {
-        display: flex;
-        align-items: center;
-        place-items: center;
-        font-family: 'Lucida Grande', Arial, sans-serif;
-        margin-left: 0;
-        margin-right: 0;
-    }
+    .signInFg{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+}
 
+.google, .facebook {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+    margin: 5px 10px;
+      justify-content: start;
 
-    .facebook {
+}
+
+   .facebook {
         background-color: #e8e2b5;
         color: black;
-        border: none;
-        margin-bottom: 3px;
-        margin-right: 15px;
     }
 
     .google {
         background-color: #e8e2b5;
         color: black;
-        border: none;
-        margin-bottom: 3px;
-
     }
 
-    button {
-        height: 40px;
-        width: 150px;
-    }
+
 
     .signButton {
         height: 40px;
@@ -129,15 +108,9 @@ body {
         display: grid;
         justify-items: center;
         font-family: 'Lucida Grande', Arial, sans-serif;
+        align-items: center;
     }
 
-    #signUpButton {
-        margin-bottom: 10px;
-    }
 
-    .footer-container {
-        margin: 10px;
-        font-size: 13px;
 
-    }
 }

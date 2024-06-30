@@ -4,22 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
-        if (!name || !email || !message) {
+        if ( !message) {
             alert('Please fill out all fields.');
             return;
         }
 
-        if (!validateEmail(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
+        window.location.href = 'requestSent.html';
+
+
 
         // Simulate form submission (e.g., send data to server)
-        console.log('Form submitted successfully:', {name, email, message});
+        console.log('Form submitted successfully:', {message});
 
         // Reset form
         contactForm.reset();
@@ -30,9 +27,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(String(email).toLowerCase());
-    }
 });

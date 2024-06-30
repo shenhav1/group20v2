@@ -135,3 +135,44 @@ footer {
     font-size: 13px;
 
 }
+
+.privacy-policy, .customer-feedback, .opening-hours {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+}
+
+.privacy-policy h2, .customer-feedback h2, .opening-hours h2 {
+    color: #e39e61;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.privacy-policy p, .customer-feedback p, .opening-hours p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.privacy-policy a {
+    color: #ddac98;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.privacy-policy a:hover {
+    text-decoration: underline;
+}
+
+.opening-hours ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.opening-hours ul li {
+    margin-bottom: 5px;
+}
+
