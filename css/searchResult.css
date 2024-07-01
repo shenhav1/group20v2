@@ -1,16 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lucida Grande', Arial, sans-serif;
-}
-
 body {
     background-color: snow;
-    font-family: 'Lucida Grande', Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    position: relative;
+    /position: relative;/
     font-size: 20px;
 }
 
@@ -18,42 +10,14 @@ body {
     display: flex;
     justify-content: left;
     margin-top: 50px;
-    flex-wrap: wrap;
     flex-direction: column;
     margin-left: 10px;
 }
 
-nav ul {
-    list-style: none;
-    margin-top: 20px;
-
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #e39e61;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-    background-color: #e39e61;
-}
-
-
 .h1 {
     font-size: 25px;
+    align-self: start;
+
 }
 
 .therapist {
@@ -77,11 +41,6 @@ p {
     margin: 5px;
 }
 
-.desc {
-    font-family: 'Lucida Grande', Arial, sans-serif;
-    font-size: 90%;
-}
-
 p2 {
     font-size: 15px;
     margin-top: 15px;
@@ -102,10 +61,4 @@ button {
 button:hover {
     background-color: rgba(0, 0, 0, 0.8);
     cursor: pointer;
-}
-
-.footer-container {
-    margin: 10px;
-    font-size: 13px;
-
 }

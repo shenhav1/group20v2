@@ -6,48 +6,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Fetch form data
         const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const phone = formData.get('phone');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
+        const subject = formData.get('subject').trim();
+        const message = formData.get('message').trim();
 
         // Basic validation
-        if (!name || !email || !phone || !subject || !message) {
+        if (!subject || !message) {
             alert('Please fill out all fields.');
             return;
         }
 
-        // Validate email using a regular expression
-        if (!isValidEmail(email)) {
-            alert('Please enter a valid email address.');
+        // Subject validation: should contain only letters and spaces
+        const subjectRegex = /^[A-Za-z\s]+$/;
+        if (!subjectRegex.test(subject)) {
+            alert('Subject should contain only letters and spaces.');
             return;
         }
 
-        // Validate phone number using a regular expression
-        if (!isValidPhone(phone)) {
-            alert('Please enter a valid phone number.');
+        // Message validation: should contain at least 10 words, each word should contain only letters
+        const messageWords = message.split(/\s+/).filter(word => word.length > 0);
+        const wordRegex = /^[A-Za-z]+$/;
+        const invalidWords = messageWords.filter(word => !wordRegex.test(word));
+
+        if (messageWords.length < 10) {
+            alert('Message should contain at least 10 words.');
             return;
         }
 
+        if (invalidWords.length > 0) {
+            alert('Each word in the message should contain only letters.');
+            return;
+        }
 
-        // Example: Clear form after submission (you can implement this)
+        // Example: Clear form after submission
         contactForm.reset();
-        alert('Thank you for your message! We will send the massage to the therapist');
+        alert('Thank you for your message! We will send the message to the therapist');
         window.location.href = "homePage.html";
-
     });
-
-    // Function to validate email using regular expression
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    // Function to validate phone number using regular expression
-    function isValidPhone(phone) {
-        // Accepts formats like +1234567890, 1234567890, (123) 456-7890, 123-456-7890, 123.456.7890
-        const phoneRegex = /^\+?(\d{1,3})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})$/;
-        return phoneRegex.test(phone);
-    }
 });
