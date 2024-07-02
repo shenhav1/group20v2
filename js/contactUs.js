@@ -1,30 +1,31 @@
+// contactUs.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
 
-    contactForm.addEventListener('submit', function (event) {
+    contactForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const message = document.getElementById('message').value.trim();
+        // Fetch form data
+        const formData = new FormData(contactForm);
+        const message = formData.get('message').trim();
 
-        if ( !message) {
-            alert('Please fill out all fields.');
+        // Basic validation
+        if (!validateMessage(message)) {
+            alert('Please enter a valid message with at least 10 words.');
             return;
         }
 
-        window.location.href = 'requestSent.html';
-
-
-
-        // Simulate form submission (e.g., send data to server)
-        console.log('Form submitted successfully:', {message});
-
-        // Reset form
+        // Example: Clear form after submission
         contactForm.reset();
-
-        // Show success message
-        alert('Thank you for your message! We will get back to you soon.');
-        window.location.href = "requestSent.html"
-
+        alert('Thank you for your message! We will send the message to the therapist.');
+        window.location.href = "requestSent.html";
     });
 
+    function validateMessage(message) {
+        const wordCount = message.split(/\s+/).filter(word => word.length > 0).length;
+        const containsNumbers = /\d/.test(message);
+
+        return wordCount >= 10 && !containsNumbers;
+    }
 });

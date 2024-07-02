@@ -1,60 +1,17 @@
-
 body {
     background: #f3cbbb;
     display: flex;
     flex-direction: column;
     position: relative;
-     display: flex;
     justify-content: center;
     line-height: 1.5;
-    margin-top: 12vh;
-        min-height: 100vh;
+    min-height: 100vh;
+    top: 40px;
 }
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 40px;
-    font-weight: bold;
-    color: #000000;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #e39e61;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-    background-color: #e39e61;
-}
-
 
 h1 {
     color: white;
     margin-left: 15px;
-
 }
 
 .label {
@@ -65,7 +22,6 @@ h1 {
     font-size: 15px;
 
 }
-
 
 .contact-form {
     flex: 1;
@@ -117,27 +73,10 @@ h1 {
     color: #ddac98;
 }
 
-
-footer {
-    color: black;
-    text-align: left;
-    padding: 1em 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-.footer-container {
-    margin: 10px;
-    font-size: 13px;
-
-}
-
 .privacy-policy, .customer-feedback, .opening-hours {
     background-color: #fff;
-    padding: 20px;
-    margin: 20px 0;
+    padding-left: 5px;
+    margin: 15px 0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: grid;
@@ -146,13 +85,12 @@ footer {
 .privacy-policy h2, .customer-feedback h2, .opening-hours h2 {
     color: #e39e61;
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .privacy-policy p, .customer-feedback p, .opening-hours p {
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: 10px;
 }
 
 .privacy-policy a {
@@ -173,4 +111,3 @@ footer {
 .opening-hours ul li {
     margin-bottom: 5px;
 }
-

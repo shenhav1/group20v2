@@ -8,15 +8,15 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /*display: flex;*/
-    /*justify-content: center;*/
+    /display: flex;/
+    /justify-content: center;/
     align-items: center;
     font-family: Calibri, serif;
-    /*line-height: 1.5;*/
-    /*margin-top: 12vh;*/
+    /line-height: 1.5;/
+    /margin-top: 12vh;/
     height: auto;
     flex-direction: column;
-    /*min-height: 100vh;*/
+    /min-height: 100vh;/
     position: relative;
 }
 

@@ -40,6 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Example: Clear form after submission
         contactForm.reset();
         alert('Thank you for your message! We will send the message to the therapist');
-        window.location.href = "homePage.html";
+        window.location.href = "requestSent.html";
     });
 });
