@@ -28,7 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         treatmentList.appendChild(listItem);
-
     });
-
 });
