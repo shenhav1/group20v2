@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'Contact therapist' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('contactTherapist.static', filename='contactTherapist.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+<img src="https://www.clickb.co.il/wp-content/uploads/2018/07/shutterstock_620715920_opt.jpg" alt="img">
+<div class="contact-form">
+    <form id="contactForm">
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+            <option value="">Select a subject</option>
+            <option value="Opening hours">Opening hours</option>
+            <option value="Previous treatments">Previous treatments</option>
+            <option value="Costs">Costs</option>
+            <option value="Rights">Rights</option>
+            <option value="other">other</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('contactTherapist.static', filename='contactTherapist.js') }}"></script>
+{% endblock %}

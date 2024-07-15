@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'Privacy Policy - Happy Soul' %}
+
+{% block page_head_css %}
+<link rel="stylesheet" href="{{ url_for('policyPrivacy.static', filename='policyPrivacy.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="container">
+        <h1>Privacy Policy</h1>
+
+        <p>Welcome to Happy Soul's Privacy Policy. This document outlines how we collect, use, and protect your personal
+            information when you visit our website and use our services related to treatments, particularly for individuals affected by war.</p>
+
+        <h2>Information We Collect</h2>
+        <ul>
+            <li><strong>Personal Information:</strong> Such as your name, email address, phone number, and other contact details.</li>
+            <li><strong>Health Information:</strong> Information related to your mental health, therapeutic needs, and treatment preferences shared during consultations or therapy sessions.</li>
+            <li><strong>Technical Data:</strong> Including your IP address, browser type, device information, and usage data collected through cookies and similar technologies.</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect for providing services, communication, improvement, and legal compliance purposes.</p>
+
+        <h2>Information Sharing and Disclosure</h2>
+        <p>We may share your information with service providers, for legal requirements, or with your consent.</p>
+
+        <h2>Data Security</h2>
+        <p>We implement reasonable security measures to protect your personal information.</p>
+
+        <h2>Your Rights</h2>
+        <p>You have the right to access, correct, update, or request erasure of your personal information.</p>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Please review this page periodically for changes.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us through the contact page</p>
+
+    </div>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('policyPrivacy.static', filename='policiPrivacy.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'Treatment History' %}
+
+{% block page_head_css %}
+  <link rel="stylesheet" href="{{ url_for('treatmenthistory.static', filename='treatmenthistory.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<main>
+    <h1>Treatment History</h1>
+    <ul id="treatmentList">
+        <li> psychologist treatment - 08/02/2024
+                    <button type="button" class="rateButton" onclick="location.href='rating'">Rate treatment</button>
+
+        <li>Massage - 03/04/2024                     <button type="button" class="rateButton" onclick="location.href='rating'">Rate treatment</button>
+
+        <li>music therapy - 10/05/2024                     <button type="button" class="rateButton" onclick="location.href='rating'">Rate treatment</button>
+
+    </ul>
+
+    <img src="https://www.questionpro.com/blog/wp-content/uploads/2023/06/image.png" alt="img">
+
+</main>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('treatmenthistory.static', filename='treatmenthistory.js') }}"></script>
+{% endblock %}

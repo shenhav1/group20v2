@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'therapist Profile' %}
+
+{% block page_head_css %}
+  <link rel="stylesheet" href="{{ url_for('profile.static', filename='profile.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<section class="profile-section">
+    <div class="profile-sidebar">
+        <div class="profile-picture">
+            <img src="https://dafdafim.co.il/wp-content/uploads/2021/10/detskie-raskraski-papa31.jpg"
+                 alt="Israel Israeli">
+        </div>
+        <h2>Israel Israeli</h2>
+        <p class="userLocation">Tel Aviv, Israel</p>
+        <p class="about">Hello! I'm doctor Israel Israeli, a Qualified psychologist, finds joy in helping others achieve
+            mental well-being. Outside of my practice, i'm enjoys painting and hiking. Happily married with two
+            children, I love to spend quality time with my family and exploring new art forms together.</p>
+        <button type="button" id="messageButton">Message me</button>
+    </div>
+    <div class="profile-main">
+        <div class="Suggested treatments">
+            <h3>Suggested treatments</h3>
+            <div id="Suggested treatments" class="treatments">
+                <div class="treatment">
+                    <h3 class="treatment-title">CBT</h3>
+                    <p class="treatment-location">Neve Tzedek 11, Tel Aviv</p>
+  <button type="button" class="scheduleButton">Schedule</button>
+                </div>
+                <div class="treatment">
+                    <h3 class="treatment-title">psychotherapy</h3>
+                    <p class="treatment-location">Neve Tzedek 11, Tel Aviv</p>
+  <button type="button" class="scheduleButton">Schedule</button>
+                </div>
+                <div class="treatment">
+                    <h3 class="treatment-title">CBT</h3>
+                    <p class="treatment-location">Ben Yehuda 124, Tel Aviv</p>
+  <button type="button" class="scheduleButton">Schedule</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('profile.static', filename='profile.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+        margin-top: 10px;
+    background: url('https://www.yozma4u.co.il/files//iStock_672310454.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.intro {
+    border-radius: 5px;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    flex-shrink: 1;
+    width: 100%;
+    max-width: 800px;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.intro h1 {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    animation-name: slideInFromLeft;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro p {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    animation-name: slideInFromRight;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.container1 {
+    background: linear-gradient(to left, lightgray, lightgoldenrodyellow);
+    max-width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto;
+    border-radius: 5%;
+}
+
+.footer-container {
+    margin: 20px;
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
+button {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    padding: 10px;
+    background-color: #e39c61;
+    color: snow;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    background-color: snow;
+    color: #e39c61;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.recommended-professionals{
+    font-size: 15px;
+}

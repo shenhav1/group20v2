@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'Search Results' %}
+
+{% block page_head_css %}
+      <link rel="stylesheet" href="{{ url_for('searchResult.static', filename='searchResult.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<div class="Container">
+    <h1>Here's what we found for you</h1>
+     <span>&nbsp;</span>
+    <div class="therapist">
+        <p1>Israel Israeli</p1>
+        <p>Tel Aviv</p>
+        <p class="desc">specialization : psychologist</p>
+        <p2>
+            *Works in collaboration with the army
+        </p2>
+        <button id="Israel Israeli">view profile</button>
+    </div>
+
+    <div class="therapist">
+        <p1>Yulia Reznik</p1>
+        <p>Tel Aviv</p>
+        <p class="desc">specialization : Art therapist</p>
+        <p2>
+            *Works in collaboration with social security and the army
+        </p2>
+        <button id="Yulia Reznik">view profile</button>
+    </div>
+
+    <div class="therapist">
+        <p1>Yael Bar</p1>
+        <p>Ramat Gan</p>
+        <p class="desc">specialization : psychologist</p>
+        <button id="Yael Bar">view profile</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('searchResult.static', filename='searchResult.js') }}"></script>
+{% endblock %}

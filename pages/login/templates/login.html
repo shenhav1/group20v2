@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'Log-In' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('login.static', filename='login.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<div class="container2">
+    <div class="signInContainer">
+        <h2>
+            Log-in
+        </h2>
+        <div class="signIn">
+            <label for="Email">Email:</label>
+            <input type="Email" id="Email" name="Email" required placeholder="Email">
+        </div>
+        <div class="signIn">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="password">
+        </div>
+        <div>
+            <button class="signButton" id="signInButton" type="submit" name="submit" aria-label="Sign In">Sign In
+            </button>
+            <p>or sign in with:</p>
+        </div>
+        <div class="signInFg">
+            <button class="facebook" onclick="location.href='https://www.facebook.com'">Sign in with Facebook</button>
+            <span>&nbsp;</span>
+            <button class="google" onclick="location.href='https://mail.google.com'">Sign in with Google</button>
+        </div>
+        <p>Haven't registered yet? sign up:</p>
+        <button class="signButton" onclick="location.href='signup'">Sign Up</button>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('login.static', filename='login.js') }}"></script>
+{% endblock %}

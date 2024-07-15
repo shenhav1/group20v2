@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'Treatment Rating' %}
+
+{% block page_head_css %}
+   <link rel="stylesheet" href="{{ url_for('rating.static', filename='rating.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<main>
+    <h1>Treatment Rating</h1>
+    <form id="ratingForm">
+        <div class="form-group">
+            <label for="therapistRating">Therapist's Rating:</label>
+            <input type="number" id="therapistRating" name="therapistRating" min="1" max="5" required>
+        </div>
+        <div class="form-group">
+            <label for="clinicRating">Clinic's Rating:</label>
+            <input type="number" id="clinicRating" name="clinicRating" min="1" max="5" required>
+        </div>
+        <div class="form-group">
+            <label for="treatmentHelp">How much did the treatment help you?</label>
+            <input type="number" id="treatmentHelp" name="treatmentHelp" min="1" max="5" required>
+        </div>
+        <div class="form-group">
+            <label for="generalRating">General Rating of the Treatment:</label>
+            <input type="number" id="generalRating" name="generalRating" min="1" max="5" required>
+        </div>
+        <div class="form-group">
+            <label for="comments">General Comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+        </div>
+        <button type="submit">Submit Rating</button>
+    </form>
+</main>
+
+  <div class="feedback-box">
+    your opinion is important to us !
+      <br>
+We would love to know how your treatment was in order to improve for next time
+  </div>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('rating.static', filename='rating.js') }}"></script>
+{% endblock %}

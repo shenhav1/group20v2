@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'Search' %}
+
+
+{% block page_head_css %}
+<link rel="stylesheet" href="{{ url_for('search.static', filename='search.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+   <img src="https://static.wixstatic.com/media/dc404a18dfa54b709a0e3bf81930e7b0.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/dc404a18dfa54b709a0e3bf81930e7b0.jpg"
+     alt="img">
+
+<div class="introDiv">
+        <p> Let us help you find your best treatment</p>
+</div>
+
+<div class="container1">
+
+    <form class="formContainer">
+        <div class="search_input"><p>Search by name</p></div>
+        <div class="search">
+            <input id="searchByName" type="search" placeholder="Search by name...">
+            <button id="searchByNameBtm" type="submit" name="submit" aria-label="Find">
+                <i class="fas fa-search"></i> <! i element for displays an icon of a magnifying glass>
+            </button>
+        </div>
+        <div class="search_input">
+            <p>
+               Or search by fields
+            </p>
+            <div class="search">
+                <label for="TreatmentType"> treatmentType:</label>
+                <select id="TreatmentType" name="Treatment Type">
+                    <option value="">-- Select Treatment Type --</option>
+                    <option value="psychologist">psychologist</option>
+                    <option value="psychotherapy">psychotherapy</option>
+                    <option value="psychiatrist">psychiatrist</option>
+                    <option value="CBT">CBT</option>
+                    <option value="art therapy">art therapy</option>
+                    <option value="music therapy">music therapy</option>
+                    <option value="reflexology">reflexology</option>
+                    <option value="acupuncture">acupuncture</option>
+                    <option value="bio-feedback">bio-feedback</option>
+                    <option value="psychoanalysis">psychoanalysis</option>
+                    <option value="physiotherapy">physiotherapy</option>
+                    <option value="massage">massage</option>
+                    <option value="spa day">spa day</option>
+                    <option value="babysitter">babysitter</option>
+                    <option value="functional training">functional training</option>
+                    <option value="pilates training">pilates training</option>
+                    <option value="yoga">yoga</option>
+                    <option value="aerobic">aerobic</option>
+
+                </select>
+            </div>
+            <div class="search">
+                <label for="city">City:</label>
+                <select name="city" id="city">
+                    <option value="">-- Select a city --</option>
+                    <option value="Arad">Arad</option>
+                    <option value="Ashdod">Ashdod</option>
+                    <option value="Ashkelon">Ashkelon</option>
+                    <option value="Bat Yam">Bat Yam</option>
+                    <option value="Be'er Sheva">Be'er Sheva</option>
+                    <option value="Bnei Brak">Bnei Brak</option>
+                    <option value="Dimona">Dimona</option>
+                    <option value="Eilat">Eilat</option>
+                    <option value="Giv'atayim">Giv'atayim</option>
+                    <option value="Hadera">Hadera</option>
+                    <option value="Haifa">Haifa</option>
+                    <option value="Herzliya">Herzliya</option>
+                    <option value="Hod HaSharon">Hod HaSharon</option>
+                    <option value="Holón">Holón</option>
+                    <option value="Jerusalem">Jerusalem</option>
+                    <option value="Karmiel">Karmiel</option>
+                    <option value="Kfar Saba">Kfar Saba</option>
+                    <option value="Kiryat Ata">Kiryat Ata</option>
+                    <option value="Kiryat Bialik">Kiryat Bialik</option>
+                    <option value="Kiryat Gat">Kiryat Gat</option>
+                    <option value="Kiryat Malakhi">Kiryat Malakhi</option>
+                    <option value="Kiryat Motzkin">Kiryat Motzkin</option>
+                    <option value="Kiryat Ono">Kiryat Ono</option>
+                    <option value="Kiryat Shmona">Kiryat Shmona</option>
+                    <option value="Kiryat Yam">Kiryat Yam</option>
+                    <option value="Lod">Lod</option>
+                    <option value="Ma'alot-Tarshiha">Ma'alot-Tarshiha</option>
+                    <option value="Migdal HaEmek">Migdal HaEmek</option>
+                    <option value="Modi'in-Maccabim-Re'ut">Modi'in-Maccabim-Re'ut</option>
+                    <option value="Nahariya">Nahariya</option>
+                    <option value="Nazareth">Nazareth</option>
+                    <option value="Nesher">Nesher</option>
+                    <option value="Ness Ziona">Ness Ziona</option>
+                    <option value="Netanya">Netanya</option>
+                    <option value="Netivot">Netivot</option>
+                    <option value="Ofakim">Ofakim</option>
+                    <option value="Or Akiva">Or Akiva</option>
+                    <option value="Or Yehuda">Or Yehuda</option>
+                    <option value="Petah Tikva">Petah Tikva</option>
+                    <option value="Ra'anana">Ra'anana</option>
+                    <option value="Ramat Gan">Ramat Gan</option>
+                    <option value="Ramat HaSharon">Ramat HaSharon</option>
+                    <option value="Ramla">Ramla</option>
+                    <option value="Rehovot">Rehovot</option>
+                </select>
+            </div>
+            <div class="search">
+                <label for="HMO">HMO:</label>
+                <select id="HMO" name="HMO">
+                    <option value="">-- Select HMO --</option>
+                    <option value="Maccabi">Maccabi</option>
+                    <option value="Clalit">Clalit</option>
+                    <option value="Meuhedet">Meuhedet</option>
+                    <option value="Leumit">Leumit</option>
+                    <option value="none">none</option>
+                </select>
+            </div>
+            <div class="search">
+                <label for="therapistGender">therapist Gender</label>
+                <select id="therapistGender" name="therapistGender">
+                    <option value="">-- Select therapist Gender --</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="without priority">without priority</option>
+                </select>
+            </div>
+            <div class="search">
+                <label for="entitlement">entitlement:</label>
+                <select id="entitlement" name="entitlement">
+                    <option value="">-- Select entitlement --</option>
+                    <option value="reservist">reservist</option>
+                    <option value="comando reservist">comando reservist</option>
+                    <option value="evacuee">evacuee</option>
+                    <option value="bereaved person">bereaved person</option>
+                    <option value="handicapped person">handicapped person</option>
+                    <option value="none">none</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit">Find</button>
+    </form>
+</div>
+{% endblock %}
+
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('search.static', filename='search.js') }}"></script>
+{% endblock %}
+
+
+

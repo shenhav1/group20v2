@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'User Profile' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('userprofile.static', filename='userProfile.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<div class="container">
+    <h1>Hello Dani!</h1>
+    <section class="profile">
+        <div class="user-details">
+            <h3>Details</h3>
+            <ul>
+                <li><strong>Name:</strong> Dani Din</li>
+                <li><strong>Email:</strong> Dani1234@gmail.com</li>
+                <li><strong>Age:</strong> 26</li>
+                <li><strong>Location:</strong> Ramat Gan, Israel</li>
+                <li><strong>Entitlement:</strong> reservist</li>
+            </ul>
+            <button class="HistoryButton" onclick="location.href='treatmenthistory'">Watch treatments history</button>
+
+        </div>
+
+        <div class="future-treatments">
+            <h3>Future Treatments status</h3>
+            <ul>
+                <li>Psychological Evaluation - Approved</li>
+                <li>Physical Therapy - denied</li>
+                <li>Massage - Awaiting Approval</li>
+            </ul>
+        </div>
+
+        <div class="messages">
+            <h3>Messages Received</h3>
+            <ul>
+                <li><strong>January 19:</strong> Welcome to our website, we will update you after confirming your details</li>
+                <li><strong>January 20:</strong>Your details have been successfully updated</li>
+            </ul>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('userprofile.static', filename='userProfile.js') }}"></script>
+{% endblock %}
+

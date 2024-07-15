@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'Request Sent' %}
+
+{% block page_head_css %}
+     <link rel="stylesheet" href="{{ url_for('requestsent.static', filename='requestSent.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<h1 class="bounce">Your request has been sent.</h1>
+<br>
+<p class="bounce">You can view the application status in your personal profile</p>
+{% endblock %}
+
+{% block page_body_footer %}
+        <p>© 2024 Happy Soul. All rights reserved.</p>
+{% endblock %}
+
+{% block page_body_js %}
+<script src="{{ url_for('requestsent.static', filename='requestSent.js') }}"></script>
+{% endblock %}
