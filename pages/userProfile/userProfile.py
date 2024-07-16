@@ -12,8 +12,5 @@ userprofile = Blueprint(
 
 # Routes
 @userprofile.route('/userprofile')
-def show_messages():
-    # Query the database to get messages
-    messages = messages_col.find().sort('_id', -1)
-
-    return render_template('userProfile.html', messages=messages)
+def index():
+    return render_template('userProfile.html')

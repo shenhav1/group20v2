@@ -1,3 +1,4 @@
+
 # App environment configurations
 FLASK_ENV = development
 DEBUG = TRUE
@@ -8,4 +9,4 @@ FLASK_RUN_PORT = 5000
 SECRET_KEY = b'+\xcb\x0f\xa0\x02\x12\xd8\x16\xd4w\xb8i\xac\xd0?I'
 
 # DB base configuration for modularity and security reasons
-CONNECTION_STRING = "mongodb://localhost:27017"
+DB_URI = '<mongodb://localhost:27017>'

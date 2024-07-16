@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var searchByNameInput = document.getElementById('searchByName');
     var treatmentTypeSelect = document.getElementById('TreatmentType');
     var citySelect = document.getElementById('city');
-    var hmoSelect = document.getElementById('HMO');
     var therapistGenderSelect = document.getElementById('therapistGender');
     var entitlementSelect = document.getElementById('entitlement');
 
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
             var searchByNameValue = searchByNameInput.value.trim();
             var treatmentTypeValue = treatmentTypeSelect.value;
             var cityValue = citySelect.value;
-            var hmoValue = hmoSelect.value;
             var therapistGenderValue = therapistGenderSelect.value;
             var entitlementValue = entitlementSelect.value;
 
@@ -29,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 searchByNameValue === '' &&
                 treatmentTypeValue === '' &&
                 cityValue === '' &&
-                hmoValue === '' &&
                 therapistGenderValue === '' &&
                 entitlementValue === ''
             ) {
@@ -47,9 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             if (cityValue !== '') {
                 searchQuery += 'city=' + encodeURIComponent(cityValue) + '&';
-            }
-            if (hmoValue !== '') {
-                searchQuery += 'hmo=' + encodeURIComponent(hmoValue) + '&';
             }
             if (therapistGenderValue !== '') {
                 searchQuery += 'therapistGender=' + encodeURIComponent(therapistGenderValue) + '&';

@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, session, flash, jsonify
+from mongoDB import *
 
 # signup blueprint definition
 signup = Blueprint(
@@ -9,52 +10,28 @@ signup = Blueprint(
     template_folder='templates'
 )
 
-@signup.route('/signup', methods=['GET', 'POST'])
+
+
+@signup.route('/signup', methods= ['GET', 'POST'])
 # def index():
-#     return render_template('signUp.html')
-def signup(session=None, user_col=None):
-    if request.method == 'GET':
-        return render_template('signUp.html')
-    elif request.method == 'POST':
-        print("post is activated")
-
-        # Process user registration using data from the form
-        email = request.form.get("email")
-        first_name = request.form.get("first_name")
-        last_name = request.form.get("last_name")
-        password = request.form.get("password")
-        city = request.form.get("city")
-        phone_number = request.form.get("phone_number")
-        birthday = request.form.get("birthday")
-        entitlement = request.form.get("entitlement")
-
-
-        existing_user = user_col.find_one({'Email': email})
-        print(email)
-        if existing_user:
-            print(f"Error: User with email {email} already exists. Please choose a different email.")
-            return render_template('signUp.html',
-                                   message="User already exists with this email. Please choose a different email.")
+#    return render_template('signUp.html')
+def signup():
+    session['pagename'] = 'signUp'
+    if request.method == 'POST':
+        if not check_if_signed(request.form.get('email')):
+            create_user(request.form.get('email'),
+                        request.form.get('password'),
+                        request.form.get('first_name'),
+                        request.form.get('last_name'),
+                        request.form.get('city'),
+                        request.form.get('phone_number'),
+                        request.form.get('birthdate'),
+                        request.form.get('entitlement')
+            )
+            return redirect(url_for('login.login'))
         else:
-            # Create a new user and insert it into the 'users' collection
-            new_user = {
-                'email': email,
-                'first name': first_name,
-                'last name': last_name,
-                'password': password,
-                'city': city,
-                'phone number': phone_number,
-                'birthday': birthday,
-                'entitlement': entitlement
-            }
+            message = "This email is already signed."
+            #fix css and stuff
+            return render_template('signUp.html', msg=message)
+    return render_template('signUp.html', msg='')
 
-            user_col.insert_one(new_user)
-            session['email'] = email
-            session['first_name'] = first_name
-            session['last_name'] = last_name
-            session['phone_number'] = phone_number
-            session['city'] = city
-            session['entitlement']: entitlement
-
-            print(f"Account for {email} created successfully.")
-            return redirect(url_for('login'))

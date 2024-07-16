@@ -69,25 +69,7 @@ app.register_blueprint(search)
 from components.main_menu.mainmenu import mainmenu
 
 app.register_blueprint(mainmenu)
-# from pages.menu.menu import menu
-#
-# app.register_blueprint(menu)
-#
-# ## Catalog
-# from pages.catalog.catalog import catalog
-#
-# app.register_blueprint(catalog)
-#
-# ## Page error handlers
-# from pages.page_error_handlers.page_error_handlers import page_error_handlers
-#
-# app.register_blueprint(page_error_handlers)
-#
-# ###### Components
-# ## Main menu
-# from components.main_menu.main_menu import main_menu
-#
-# app.register_blueprint(main_menu)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
