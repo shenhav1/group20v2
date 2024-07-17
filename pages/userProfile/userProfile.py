@@ -17,10 +17,10 @@ def index():
     email = session.get('email')
     if email:
         userData = get_user_by_email(email)
-
         user_id_str = str(userData['_id'])
-        print(user_id_str)
+
         treatments = get_treatments_by_user_id_not_done(user_id_str)
-        return render_template('userProfile.html', userData=userData, treatments=treatments)
+        messages = get_messages_by_user_id(user_id_str)
+        return render_template('userProfile.html', userData=userData, treatments=treatments, messages = messages)
     else:
         return jsonify({"error": "User not logged in"}), 401

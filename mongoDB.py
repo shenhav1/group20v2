@@ -23,20 +23,26 @@ Treatment_col = mydatabase['treatment']
 request_col = mydatabase['request']
 message_col = mydatabase['message']
 
+
 def get_users():
     return mydatabase['users']
+
 
 def get_request():
     return mydatabase['request']
 
+
 def get_therapist():
     return mydatabase['therapist']
+
 
 def get_treatment():
     return mydatabase['treatment']
 
+
 def get_message():
     return mydatabase['message']
+
 
 # USERS
 def get_user_by_email(email):
@@ -51,8 +57,23 @@ def get_user_by_email(email):
         print(f"An error occurred: {e}")
         return None
 
+
 def check_if_signed(email):
     return get_user_by_email(email) is not None
+
+
+def get_treatments():
+    try:
+        treatments = Treatment_col.find()
+        treatments_list = list(treatments)
+        if treatments_list:
+            print(f"Treatments found: {treatments_list}")  # Debugging statement
+        else:
+            print("No treatments found")  # Debugging statement
+        return treatments_list
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return []
 
 
 def get_treatments_by_user_id_not_done(userId):
@@ -68,6 +89,37 @@ def get_treatments_by_user_id_not_done(userId):
     except Exception as e:
         print(f"An error occurred: {e}")
         return []
+
+
+def get_treatments_by_user_id_done(userId):
+    try:
+        objectId = ObjectId(userId)
+        treatments = Treatment_col.find({'patient': objectId, 'status': 'done'})
+        treatments_list = list(treatments)
+        if treatments_list:
+            print(f"Treatments found: {treatments_list}")  # Debugging statement
+        else:
+            print("No treatments found")  # Debugging statement
+        return treatments_list
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return []
+
+
+def get_messages_by_user_id(userId):
+    try:
+        objectId = ObjectId(userId)
+        messages = message_col.find({'patient': objectId})
+        messages_list = list(messages)
+        if messages_list:
+            print(f"Messages found: {messages_list}")  # Debugging statement
+        else:
+            print("No messages found")  # Debugging statement
+        return messages_list
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return []
+
 
 def create_user(email, password, first_name, last_name, city, phone_number, birthdate, entitlement):
     new_user = {

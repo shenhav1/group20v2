@@ -39,8 +39,13 @@
         <div class="messages">
             <h3>Messages Received</h3>
             <ul>
-                <li><strong>January 19:</strong> Welcome to our website, we will update you after confirming your details</li>
-                <li><strong>January 20:</strong>Your details have been successfully updated</li>
+                {% if messages %}
+                    {% for message in messages %}
+                        <li><strong>{{ message.date }}:</strong> from: {{message.handler}} - {{ message.messageContent }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li>No messages found</li>
+                {% endif %}
             </ul>
         </div>
     </section>
