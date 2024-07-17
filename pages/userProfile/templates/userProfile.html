@@ -8,16 +8,16 @@
 
 {% block page_body_main_content %}
 <div class="container">
-    <h1>Hello Dani!</h1>
+    <h1>Hello {{ userData.firstName }}!</h1>
     <section class="profile">
         <div class="user-details">
             <h3>Details</h3>
             <ul>
-                <li><strong>Name:</strong> Dani Din</li>
-                <li><strong>Email:</strong> Dani1234@gmail.com</li>
-                <li><strong>Age:</strong> 26</li>
-                <li><strong>Location:</strong> Ramat Gan, Israel</li>
-                <li><strong>Entitlement:</strong> reservist</li>
+                <li><strong>Name:</strong> {{ userData.firstName }} {{ userData.lastName }}</li>
+                <li><strong>Email:</strong> {{ userData.email }}</li>
+                <li><strong>Date Of Birth:</strong>{{ userData.dateOfBirth }}</li>
+                <li><strong>Location:</strong>{{ userData.city }}</li>
+                <li><strong>Entitlement:</strong> {{ userData.entitlement }}</li>
             </ul>
             <button class="HistoryButton" onclick="location.href='treatmenthistory'">Watch treatments history</button>
 
@@ -26,9 +26,13 @@
         <div class="future-treatments">
             <h3>Future Treatments status</h3>
             <ul>
-                <li>Psychological Evaluation - Approved</li>
-                <li>Physical Therapy - denied</li>
-                <li>Massage - Awaiting Approval</li>
+            {% if treatments %}
+                {% for treatment in treatments %}
+                    <li>{{ treatment.typeOfTreatment }} - {{ treatment.status }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No future treatments found</li>
+            {% endif %}
             </ul>
         </div>
 

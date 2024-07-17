@@ -2,6 +2,7 @@ import os
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
+from bson import ObjectId
 
 # Load environment variables from a .env file
 load_dotenv()
@@ -52,6 +53,21 @@ def get_user_by_email(email):
 
 def check_if_signed(email):
     return get_user_by_email(email) is not None
+
+
+def get_treatments_by_user_id_not_done(userId):
+    try:
+        objectId = ObjectId(userId)
+        treatments = Treatment_col.find({'patient': objectId, 'status': {'$ne': 'done'}})
+        treatments_list = list(treatments)
+        if treatments_list:
+            print(f"Treatments found: {treatments_list}")  # Debugging statement
+        else:
+            print("No treatments found")  # Debugging statement
+        return treatments_list
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return []
 
 def create_user(email, password, first_name, last_name, city, phone_number, birthdate, entitlement):
     new_user = {
