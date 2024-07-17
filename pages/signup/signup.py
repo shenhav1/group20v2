@@ -10,28 +10,24 @@ signup = Blueprint(
     template_folder='templates'
 )
 
-
-
-@signup.route('/signup', methods= ['GET', 'POST'])
-# def index():
-#    return render_template('signUp.html')
-def signup():
+@signup.route('/signup', methods=['GET', 'POST'])
+def index():
     session['pagename'] = 'signUp'
     if request.method == 'POST':
-        if not check_if_signed(request.form.get('email')):
-            create_user(request.form.get('email'),
-                        request.form.get('password'),
-                        request.form.get('first_name'),
-                        request.form.get('last_name'),
-                        request.form.get('city'),
-                        request.form.get('phone_number'),
-                        request.form.get('birthdate'),
-                        request.form.get('entitlement')
+        data = request.get_json()
+        if not check_if_signed(data.get('email')):
+            create_user(data.get('email'),
+                        data.get('password'),
+                        data.get('firstName'),
+                        data.get('lastName'),
+                        data.get('city'),
+                        data.get('phoneNumber'),
+                        data.get('dob'),
+                        data.get('entitlement')
             )
-            return redirect(url_for('login.login'))
+            return jsonify({'success': True, 'redirect': url_for('login.index')})
         else:
             message = "This email is already signed."
-            #fix css and stuff
+            # fix css and stuff
             return render_template('signUp.html', msg=message)
     return render_template('signUp.html', msg='')
-

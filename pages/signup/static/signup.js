@@ -20,11 +20,26 @@ document.addEventListener('DOMContentLoaded', function () {
                     dob: document.getElementById('dob').value,
                     entitlement: document.getElementById('entitlement').value
                 };
+                console.log(formData)
+                // Send data to server
+                fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Redirect to login page upon successful signup
+                    window.location.href = 'login';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('There was an error processing your signup. Please try again.');
+                });
 
-                console.log('Form data:', formData);
-
-
-                window.location.href = 'login';
             }
         });
     }

@@ -5,7 +5,7 @@ mainmenu = Blueprint(
     'mainmenu',
     __name__,
     static_folder='static',
-    static_url_path='/pages/mainmenu',
+    static_url_path='/components/mainmenu',
     template_folder='templates'
 )
 

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, session, redirect, url_for, flash, request
+from flask import Blueprint, render_template, session, redirect, url_for, flash, request, jsonify
 from mongoDB import *
 
 # login blueprint definition
@@ -10,27 +10,24 @@ login = Blueprint(
     template_folder='templates'
 )
 
-
-
-
 # Routes
-@login.route('/login', methods = ['GET' , ' POST'])
-def login():
+@login.route('/login', methods=['GET', 'POST'])
+def index():
     session['pagename'] = 'login'
     if request.method == 'POST':
-        if check_if_signed(request.form.get('email')):
-            user = get_user_by_email(request.form.get('email'))
-            if user['Password'] == request.form.get('password'):
-                session['email'] = request.form.get('email')
-                session['users_name'] = user['FirstName']
+        data = request.get_json()
+        email = data.get('email')
+        password = data.get('password')
+        if check_if_signed(email):
+            user = get_user_by_email(email)
+            if user['password'] == password:
+                session['email'] = email
+                session['users_name'] = user['firstName']
                 session['logged_in'] = True
-                return redirect(url_for('userProfile.userprofile'))
+                return jsonify({'success': True, 'redirect': url_for('userprofile.index')})
             else:
-                msg = 'Incorrect password, Please try again'
-                return render_template("login.html", msg=msg)
+                return jsonify({'success': False, 'message': 'Incorrect password, Please try again'})
         else:
-            msg = 'Incorrect email, Please try again'
-            return render_template("login.html", msg=msg)
+            return jsonify({'success': False, 'message': 'Incorrect email, Please try again'})
 
     return render_template("login.html", msg="")
-
