@@ -115,9 +115,8 @@ img {
 }
 
 button {
-    font-family: 'Lucida Grande', Arial, sans-serif;
-    padding: 10px;
-    background-color: #e39c61;
+    background: none;
+    padding: 5px;
     color: snow;
     border: none;
     border-radius: 5px;
@@ -127,12 +126,15 @@ button {
 }
 
 button:hover {
-    font-family: 'Lucida Grande', Arial, sans-serif;
-    background-color: snow;
-    color: #e39c61;
+    color: black;
+    background: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.recommended-professionals{
-    font-size: 15px;
+
+.helpLink{
+  font-size: 20px;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
 }

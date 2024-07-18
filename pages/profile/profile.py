@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session, jsonify
+from mongoDB import *
 
 # profile blueprint definition
 profile = Blueprint(
@@ -13,4 +14,10 @@ profile = Blueprint(
 # Routes
 @profile.route('/profile')
 def index():
-    return render_template('profile.html')
+    name = session.get('name')
+    if name:
+        therapistData = get_therapist_by_name(name)
+
+        return render_template('profile.html', therapistData=therapistData)
+    else:
+        return jsonify({"error": "therapist not found"}), 401

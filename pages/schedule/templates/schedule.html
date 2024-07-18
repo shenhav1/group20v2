@@ -3,17 +3,15 @@
 
 {% block page_head_css %}
  <link rel="stylesheet" href="{{ url_for('schedule.static', filename='schedule.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+ <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
 {% endblock %}
 
 {% block page_body_main_content %}
 <div class="treatment-form">
     <h2>Book a treatment</h2>
-    <form id="treatmentform">
-
+    <form class="treatment" onsubmit="return validateForm()">
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" required><br>
-
 
         <label for="time">Select time:</label>
         <select name="time" id="time" class="input_box">
@@ -44,16 +42,13 @@
             <option value="20:00">08:00 PM</option>
             <option value="20:30">08:30 PM</option>
         </select>
-
-        <label for="comments">Comments:</label>
-        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
         <button type="submit">Book Treatment</button>
     </form>
-     </div>
+</div>
 {% endblock %}
 
 {% block page_body_footer %}
-        <p>© 2024 Happy Soul. All rights reserved.</p>
+    <p>© 2024 Happy Soul. All rights reserved.</p>
 {% endblock %}
 
 {% block page_body_js %}

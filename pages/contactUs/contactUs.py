@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session, jsonify, request, url_for
+from datetime import datetime
+from mongoDB import *
 
 # contactus blueprint definition
 contactus = Blueprint(
@@ -11,6 +13,21 @@ contactus = Blueprint(
 
 
 # Routes
-@contactus.route('/contactus')
+@contactus.route('/contactus', methods=['GET', 'POST'])
 def index():
-    return render_template('contactUs.html')
+    session['pagename'] = 'contactUs'
+    if request.method == 'POST':
+        data = request.get_json()
+        if session['logged_in']:
+            user = get_user_by_email(session.get('email'))
+            if user:
+                create_request(datetime.today().strftime('%Y-%m-%d'),
+                    data.get('message'),
+                    session.get('email'),
+                    )
+            return jsonify({'success': True, 'redirect': url_for('requestsent.index')})
+        else:
+            message = "You are not logged in."
+            return render_template('contactUs.html', msg=message)
+    return render_template('contactUs.html', msg='')
+

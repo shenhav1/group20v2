@@ -4,6 +4,7 @@ from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
 from bson import ObjectId
 
+
 # Load environment variables from a .env file
 load_dotenv()
 
@@ -133,3 +134,36 @@ def create_user(email, password, first_name, last_name, city, phone_number, birt
         'entitlement': entitlement
     }
     Users_col.insert_one(new_user)
+
+def get_therapist_by_name(name):
+        try:
+            therapist = Therapist_col.find_one({'name': name})
+            if therapist:
+                print("Therapist found: {therapist}")  # Debugging statement
+            else:
+                print(f"Therapist not found")  # Debugging statement
+            return therapist
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return None
+
+
+def create_request(date, referralContent, patient):
+    new_request = {
+        'date': date,
+        'referralContent': referralContent,
+        'patient': patient
+    }
+    request_col.insert_one(new_request)
+
+def create_treatment(adress, typeOfTreatment, date, therapist, patient, rating, status):
+    new_treatment = {
+        'adress': adress,
+        'typeOfTreatment': typeOfTreatment,
+        'date': date,
+        'therapist': therapist,
+        'patient': patient,
+        'rating': rating,
+        'status': status
+    }
+    Treatment_col.insert_one(new_treatment)

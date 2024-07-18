@@ -110,3 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return true; // Form is valid
     }
 });
+
+localStorage['email'] = 'hcgc'
+const email = localStorage['email']
+

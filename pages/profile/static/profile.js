@@ -10,10 +10,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle messaging the therapist
-    const messageButton = document.querySelector('#messageButton');
-    messageButton.addEventListener('click', () => {
-        // Redirect to the contact page
-        window.location.href = 'contacttherapist';
-    });
 });

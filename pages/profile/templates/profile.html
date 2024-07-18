@@ -13,30 +13,26 @@
             <img src="https://dafdafim.co.il/wp-content/uploads/2021/10/detskie-raskraski-papa31.jpg"
                  alt="Israel Israeli">
         </div>
-        <h2>Israel Israeli</h2>
-        <p class="userLocation">Tel Aviv, Israel</p>
-        <p class = "user-detailsspecialization"> Psychologist</p>
-        <p class="about">Hello! I'm doctor Israel Israeli, a Qualified psychologist, finds joy in helping others achieve
-            mental well-being. Outside of my practice, i'm enjoys painting and hiking. Happily married with two
-            children, I love to spend quality time with my family and exploring new art forms together.</p>
+        <h2>{{therapistData.name}}</h2>
+        <p class="userLocation">{{therapistData.clinicLocation}}</p>
+        <p class = "user-detailsspecialization"> {{therapistData.specialty}}</p>
+        <p class="about">{{therapistData.aboutTherapist}}</p>
         <button type="button" id="messageButton">Message me</button>
     </div>
     <div class="profile-main">
         <div class="Suggested treatments">
             <h3>Suggested treatments</h3>
             <div id="Suggested treatments" class="treatments">
-                <div class="treatment">
-                    <h3 class="treatment-title">CBT</h3>
-  <button type="button" class="scheduleButton">Schedule</button>
-                </div>
-                <div class="treatment">
-                    <h3 class="treatment-title">psychotherapy</h3>
-  <button type="button" class="scheduleButton">Schedule</button>
-                </div>
-                <div class="treatment">
-                    <h3 class="treatment-title">CBT</h3>
-  <button type="button" class="scheduleButton">Schedule</button>
-                </div>
+                   {% if proposedTreatments %}
+                {% for treatment in proposedTreatments %}
+                    <div class="treatment">
+                        <h3 class="treatment-title">{{ treatment }}</h3>
+                        <button type="button" class="scheduleButton">Schedule</button>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No suggested treatments found</p>
+            {% endif %}
             </div>
         </div>
     </div>

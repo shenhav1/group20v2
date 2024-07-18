@@ -17,10 +17,6 @@ app.register_blueprint(homepage)
 from pages.signup.signup import signup
 app.register_blueprint(signup)
 
-## contactTherapist
-from pages.contactTherapist.contactTherapist import contacttherapist
-app.register_blueprint(contacttherapist)
-
 ## contactUs
 from pages.contactUs.contactUs import contactus
 app.register_blueprint(contactus)
