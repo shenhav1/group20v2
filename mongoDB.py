@@ -136,18 +136,19 @@ def create_user(email, password, first_name, last_name, city, phone_number, birt
     Users_col.insert_one(new_user)
 
 def get_therapist_by_name(name):
-        try:
-            therapist = Therapist_col.find_one({'name': name})
-            if therapist:
-                print("Therapist found: {therapist}")  # Debugging statement
-            else:
-                print(f"Therapist not found")  # Debugging statement
-            return therapist
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            return None
-
-
+    try:
+        # Create a case-insensitive regular expression to match part of the name
+        query = {'name': {'$regex': name, '$options': 'i'}}
+        therapist = Therapist_col.find_one(query)
+        if therapist:
+            print(f"Therapist found: {therapist}")  # Debugging statement
+        else:
+            print(f"Therapist not found")  # Debugging statement
+        return therapist
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+    
 def create_request(date, referralContent, patient):
     new_request = {
         'date': date,
@@ -155,6 +156,35 @@ def create_request(date, referralContent, patient):
         'patient': patient
     }
     request_col.insert_one(new_request)
+    
+def get_therapist_by_fields(search_by_name=None, treatment_type=None, city=None, therapist_gender=None, entitlement=None):
+    query = {}
+    if treatment_type:
+        query['proposedTreatments'] = treatment_type
+    if entitlement:
+        query['entitlement'] = entitlement
+    if therapist_gender:
+        query['gender'] = therapist_gender
+    if city:
+        query['clinicLocation'] = {'$regex': city, '$options': 'i'}
+
+    try:
+        therapists = list(Therapist_col.find(query))
+
+        if search_by_name:
+            therapists = [
+                therapist for therapist in therapists
+                if search_by_name.lower() in therapist['name'].lower()
+            ]
+
+        # Convert ObjectIds to strings
+        for therapist in therapists:
+            therapist['_id'] = str(therapist['_id'])
+
+        return therapists
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return []
 
 def create_treatment(adress, typeOfTreatment, date, therapist, patient, rating, status):
     new_treatment = {
