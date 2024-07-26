@@ -10,6 +10,7 @@ load_dotenv()
 
 # Get the URI from the environment variables
 uri = os.getenv('DB_URI')
+
 if uri is None:
     raise ValueError('DB_URI environment variable not set')
 
