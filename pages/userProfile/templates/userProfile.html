@@ -2,8 +2,8 @@
 {% set page_head_title = 'User Profile' %}
 
 {% block page_head_css %}
-    <link rel="stylesheet" href="{{ url_for('userprofile.static', filename='userProfile.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('userprofile.static', filename='userProfile.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
 {% endblock %}
 
 {% block page_body_main_content %}
@@ -26,13 +26,18 @@
         <div class="future-treatments">
             <h3>Future Treatments status</h3>
             <ul>
-            {% if treatments %}
+                {% if treatments %}
                 {% for treatment in treatments %}
-                    <li>{{ treatment.typeOfTreatment }} - {{ treatment.status }}</li>
+                <li>{{ treatment.typeOfTreatment }} - {{ treatment.date }} - {{ treatment.status }}</li>
+                <form action="{{ url_for('userprofile.delete_treatment', treatment_id=treatment._id) }}" method="post"
+                      style="display:inline;">
+                    <input type="hidden" name="treatment_id" value="{{ treatment._id }}">
+                    <button type="submit">Delete</button>
+                </form>
                 {% endfor %}
-            {% else %}
+                {% else %}
                 <li>No future treatments found</li>
-            {% endif %}
+                {% endif %}
             </ul>
         </div>
 
@@ -40,11 +45,11 @@
             <h3>Messages Received</h3>
             <ul>
                 {% if messages %}
-                    {% for message in messages %}
-                        <li><strong>{{ message.date }}:</strong> from: {{message.handler}} - {{ message.messageContent }}</li>
-                    {% endfor %}
+                {% for message in messages %}
+                <li><strong>{{ message.date }}:</strong> from: {{message.handler}} - {{ message.messageContent }}</li>
+                {% endfor %}
                 {% else %}
-                    <li>No messages found</li>
+                <li>No messages found</li>
                 {% endif %}
             </ul>
         </div>
@@ -53,7 +58,7 @@
 {% endblock %}
 
 {% block page_body_footer %}
-        <p>© 2024 Happy Soul. All rights reserved.</p>
+<p>© 2024 Happy Soul. All rights reserved.</p>
 {% endblock %}
 
 {% block page_body_js %}

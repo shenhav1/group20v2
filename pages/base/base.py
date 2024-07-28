@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session, redirect, url_for
 
 # base blueprint definition
 base = Blueprint(
@@ -14,3 +14,4 @@ base = Blueprint(
 @base.route('/base')
 def index():
     return render_template('base.html')
+

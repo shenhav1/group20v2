@@ -77,19 +77,8 @@ def get_treatments():
         return []
 
 
-def get_treatments_by_user_id_not_done(userId):
-    try:
-        objectId = ObjectId(userId)
-        treatments = Treatment_col.find({'patient': objectId, 'status': {'$ne': 'done'}})
-        treatments_list = list(treatments)
-        if treatments_list:
-            print(f"Treatments found: {treatments_list}")  # Debugging statement
-        else:
-            print("No treatments found")  # Debugging statement
-        return treatments_list
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return []
+def get_treatments_by_user_email(email):
+    return list(mydatabase.Treatment_col.find({'userEmail': email, 'status': {'$ne': 'Done'}}))
 
 
 def get_treatments_by_user_id_done(userId):
@@ -229,3 +218,14 @@ def get_treatments_by_user_email_and_date_done(email, date):
         'date': date
     })
     return list(treatments)
+
+
+def delete_treatment_by_id(treatment_id):
+    try:
+        result = mydatabase.Treatment_col.delete_one({'_id': ObjectId(treatment_id)})
+        print(f"Deleted count: {result.deleted_count}")  # Debug line to check if deletion was successful
+        return result
+    except Exception as e:
+        print(f"Error deleting treatment: {e}")
+        return None
+

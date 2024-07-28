@@ -1,0 +1,6 @@
+the libraries we import are:
+1)	Flask
+2)	Os
+3)	Pymongo
+4)	Bson
+5)	dotenv
