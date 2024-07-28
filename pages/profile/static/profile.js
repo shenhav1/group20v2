@@ -10,4 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const scheduleButtons = document.querySelectorAll('.scheduleButton');
+        scheduleButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const therapist = this.dataset.therapist;
+                const address = this.dataset.address;
+                const treatment = this.dataset.treatment;
+                const url = `{{ url_for('schedule.index') }}?therapist=${encodeURIComponent(therapist)}&address=${encodeURIComponent(address)}&treatment=${encodeURIComponent(treatment)}`;
+                window.location.href = url;
+            });
+        });
+    });
 });

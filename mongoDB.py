@@ -4,7 +4,6 @@ from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
 from bson import ObjectId
 
-
 # Load environment variables from a .env file
 load_dotenv()
 
@@ -122,6 +121,19 @@ def get_messages_by_user_id(userId):
         print(f"An error occurred: {e}")
         return []
 
+def get_treatments_by_user_email_done(email):
+        try:
+            treatments = Treatment_col.find({'patient': email, 'status': 'done'})
+            treatments_list = list(treatments)
+            if treatments_list:
+                print(f"Treatments found: {treatments_list}")  # Debugging statement
+            else:
+                print("No treatments found")  # Debugging statement
+            return treatments_list
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return []
+
 
 def create_user(email, password, first_name, last_name, city, phone_number, birthdate, entitlement):
     new_user = {
@@ -136,6 +148,7 @@ def create_user(email, password, first_name, last_name, city, phone_number, birt
     }
     Users_col.insert_one(new_user)
 
+
 def get_therapist_by_name(name):
     try:
         # Create a case-insensitive regular expression to match part of the name
@@ -149,7 +162,8 @@ def get_therapist_by_name(name):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-    
+
+
 def create_request(date, referralContent, patient):
     new_request = {
         'date': date,
@@ -157,8 +171,10 @@ def create_request(date, referralContent, patient):
         'patient': patient
     }
     request_col.insert_one(new_request)
-    
-def get_therapist_by_fields(search_by_name=None, treatment_type=None, city=None, therapist_gender=None, entitlement=None):
+
+
+def get_therapist_by_fields(search_by_name=None, treatment_type=None, city=None, therapist_gender=None,
+                            entitlement=None):
     query = {}
     if treatment_type:
         query['proposedTreatments'] = treatment_type
@@ -187,9 +203,10 @@ def get_therapist_by_fields(search_by_name=None, treatment_type=None, city=None,
         print(f"An error occurred: {e}")
         return []
 
-def create_treatment(adress, typeOfTreatment, date, therapist, patient, rating, status):
+
+def create_treatment(address, typeOfTreatment, date, therapist, patient, rating, status):
     new_treatment = {
-        'adress': adress,
+        'address': address,
         'typeOfTreatment': typeOfTreatment,
         'date': date,
         'therapist': therapist,
@@ -197,4 +214,18 @@ def create_treatment(adress, typeOfTreatment, date, therapist, patient, rating, 
         'rating': rating,
         'status': status
     }
-    Treatment_col.insert_one(new_treatment)
+
+    try:
+        result = Treatment_col.insert_one(new_treatment)
+        print(f"Inserted treatment with id: {result.inserted_id}")  # Debug: Confirm insertion
+    except Exception as e:
+        print(f"Error inserting treatment: {e}")  # Debug: Print any insertion errors
+
+
+def get_treatments_by_user_email_and_date_done(email, date):
+    treatments = Treatment_col.find({
+        'patient': email,
+        'status': 'done',
+        'date': date
+    })
+    return list(treatments)

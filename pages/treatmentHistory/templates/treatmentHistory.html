@@ -2,32 +2,34 @@
 {% set page_head_title = 'Treatment History' %}
 
 {% block page_head_css %}
-  <link rel="stylesheet" href="{{ url_for('treatmenthistory.static', filename='treatmenthistory.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('treatmenthistory.static', filename='treatmenthistory.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
 {% endblock %}
 
 {% block page_body_main_content %}
 <main>
     <h1>Treatment History</h1>
     <ul id="treatmentList">
-     {% if treatments %}
-                {% for treatment in treatments %}
-                    <li>{{ treatment.typeOfTreatment }} - {{ treatment.date }}
-                        <button type="button" class="rateButton" onclick="location.href='rating'">Rate treatment</button>
-                    </li>
-                {% endfor %}
-            {% else %}
-                <li>No treatments found</li>
-            {% endif %}
+        {% if treatments %}
+        {% for treatment in treatments %}
+        <li>{{ treatment.typeOfTreatment }} - {{ treatment.date }}
+            <button type="button" class="rateButton"
+                    onclick="location.href='{{ url_for('rating.index', treatment_id=treatment._id, treatment_date=treatment.date) }}'">
+                Rate treatment
+            </button>
+        </li>
+        {% endfor %}
+        {% else %}
+        <li>No treatments found</li>
+        {% endif %}
     </ul>
 
     <img src="https://www.questionpro.com/blog/wp-content/uploads/2023/06/image.png" alt="img">
-
 </main>
 {% endblock %}
 
 {% block page_body_footer %}
-        <p>© 2024 Happy Soul. All rights reserved.</p>
+<p>© 2024 Happy Soul. All rights reserved.</p>
 {% endblock %}
 
 {% block page_body_js %}

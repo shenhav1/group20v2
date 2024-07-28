@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 therapistRating: parseInt(document.getElementById('therapistRating').value),
                 clinicRating: parseInt(document.getElementById('clinicRating').value),
                 treatmentHelp: parseInt(document.getElementById('treatmentHelp').value),
-                generalRating: parseInt(document.getElementById('generalRating').value),
+                generalRating: parseInt(document.getElementById('generalRating').value)
             };
 
             // Calculate average rating
@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log('Form data:', formData); // Debugging
             console.log('Average rating:', averageRating); // Debugging
+
+            // Get treatment ID from the hidden input field
+            var treatmentId = document.getElementById('treatmentId').value;
 
             // Send data to server
             fetch('/submit_rating', {
@@ -27,10 +30,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 body: JSON.stringify({
                     formData: formData,
-                    averageRating: averageRating
+                    averageRating: averageRating,
+                    treatmentId: treatmentId
                 })
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log("Response status:", response.status); // Debugging
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
             .then(data => {
                 console.log('Success:', data); // Debugging
                 if (data.success) {

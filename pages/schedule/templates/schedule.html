@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
-{% set page_head_title = 'treatment Booking' %}
+{% set page_head_title = 'Treatment Booking' %}
 
 {% block page_head_css %}
- <link rel="stylesheet" href="{{ url_for('schedule.static', filename='schedule.css') }}"/>
- <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('schedule.static', filename='schedule.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
 {% endblock %}
 
 {% block page_body_main_content %}
 <div class="treatment-form">
-    <h2>Book a treatment</h2>
-    <form class="treatment" onsubmit="return validateForm()">
+    <h2>Book a Treatment</h2>
+    <form class="treatment" action="{{ url_for('schedule.index') }}" method="POST" onsubmit="return validateForm()">
+        <input type="hidden" id="therapist" name="therapist" value="{{ therapist }}">
+        <input type="hidden" id="address" name="address" value="{{ address }}">
+        <input type="hidden" id="typeOfTreatment" name="typeOfTreatment" value="{{ treatment }}">
+
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" required><br>
 
         <label for="time">Select time:</label>
-        <select name="time" id="time" class="input_box">
+        <select name="time" id="time" class="input_box" required>
             <option value="08:00">08:00 AM</option>
             <option value="08:30">08:30 AM</option>
             <option value="09:00">09:00 AM</option>
@@ -41,16 +45,24 @@
             <option value="19:30">07:30 PM</option>
             <option value="20:00">08:00 PM</option>
             <option value="20:30">08:30 PM</option>
-        </select>
+        </select><br>
+
+
         <button type="submit">Book Treatment</button>
     </form>
 </div>
 {% endblock %}
 
 {% block page_body_footer %}
-    <p>© 2024 Happy Soul. All rights reserved.</p>
+<p>© 2024 Happy Soul. All rights reserved.</p>
 {% endblock %}
 
 {% block page_body_js %}
 <script src="{{ url_for('schedule.static', filename='schedule.js') }}"></script>
+<script>
+    function validateForm() {
+        // Add form validation if necessary
+        return true;
+    }
+</script>
 {% endblock %}
