@@ -1,11 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const userDetails = {
-        name: 'Dani Din',
-        email: 'Dani1234@gmail.com',
-        age: 26,
-        location: 'Ramat Gan, Israel',
-        entitlement: 'reservist'
-    };
+    document.querySelectorAll('.delete-button').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var treatmentId = this.getAttribute('data-tid');
+            var treatmentElement = document.getElementById('treatment-' + treatmentId);
+
+            fetch(`/userprofile/delete_treatment/${treatmentId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => {
+                    treatmentElement.remove();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    });
+
 
     // Function to update user details
     function updateUserDetails(details) {
@@ -21,28 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update the user details on page load
     updateUserDetails(userDetails);
 
-    //Handling future treatments status update
+    // Handling future treatments status update
     const futureTreatments = [
         {treatment: 'Psychological Evaluation', status: 'Approved'},
-        {treatment: 'Physical Therapy', status: 'denied'},
+        {treatment: 'Physical Therapy', status: 'Denied'},
         {treatment: 'Massage', status: 'Awaiting Approval'}
     ];
 
     function updateFutureTreatments(treatments) {
-        const list = treatments.map(treatment => <li>${treatment.treatment} - ${treatment.status}</li>).join('');
+        const list = treatments.map(treatment => `<li>${treatment.treatment} - ${treatment.status}</li>`).join('');
         document.querySelector('.future-treatments ul').innerHTML = list;
     }
 
     // Update the future treatments on page load
-    updateFutureTreatments(futureTreatments);
+    //updateFutureTreatments(futureTreatments);
 
-    //Adding a new message
+    // Adding a new message
     function addMessage(date, message) {
         const newMessage = document.createElement('li');
-        newMessage.innerHTML = <strong>${date}:</strong> ${message};
+        newMessage.innerHTML = `<strong>${date}:</strong> ${message}`;
         document.querySelector('.messages ul').appendChild(newMessage);
     }
 
-    // Add a new message
-    addMessage('January 21', 'Your appointment has been confirmed');
 });

@@ -32,7 +32,7 @@ def get_treatments_by_user_email_not_done(email):
     return treatments
 
 
-@userprofile.route('/delete_treatment/<treatment_id>', methods=['POST'])
+@userprofile.route('/userprofile/delete_treatment/<treatment_id>', methods=['DELETE'])
 def delete_treatment(treatment_id):
     email = session.get('email')
     if email:

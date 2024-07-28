@@ -15,12 +15,11 @@
             <ul>
                 <li><strong>Name:</strong> {{ userData.firstName }} {{ userData.lastName }}</li>
                 <li><strong>Email:</strong> {{ userData.email }}</li>
-                <li><strong>Date Of Birth:</strong>{{ userData.dateOfBirth }}</li>
-                <li><strong>Location:</strong>{{ userData.city }}</li>
+                <li><strong>Date Of Birth:</strong> {{ userData.dateOfBirth }}</li>
+                <li><strong>Location:</strong> {{ userData.city }}</li>
                 <li><strong>Entitlement:</strong> {{ userData.entitlement }}</li>
             </ul>
             <button class="HistoryButton" onclick="location.href='treatmenthistory'">Watch treatments history</button>
-
         </div>
 
         <div class="future-treatments">
@@ -28,12 +27,10 @@
             <ul>
                 {% if treatments %}
                 {% for treatment in treatments %}
-                <li>{{ treatment.typeOfTreatment }} - {{ treatment.date }} - {{ treatment.status }}</li>
-                <form action="{{ url_for('userprofile.delete_treatment', treatment_id=treatment._id) }}" method="post"
-                      style="display:inline;">
-                    <input type="hidden" name="treatment_id" value="{{ treatment._id }}">
-                    <button type="submit">Delete</button>
-                </form>
+                <li id="treatment-{{ treatment._id }}">
+                    {{ treatment.typeOfTreatment }} - {{ treatment.date }} - {{ treatment.status }}
+                    <button class="delete-button" data-tid="{{ treatment._id }}">Delete</button>
+                </li>
                 {% endfor %}
                 {% else %}
                 <li>No future treatments found</li>
@@ -64,4 +61,3 @@
 {% block page_body_js %}
 <script src="{{ url_for('userprofile.static', filename='userProfile.js') }}"></script>
 {% endblock %}
-

@@ -223,7 +223,7 @@ def get_treatments_by_user_email_and_date_done(email, date):
 
 def delete_treatment_by_id(treatment_id):
     try:
-        result = mydatabase.Treatment_col.delete_one({'_id': ObjectId(treatment_id)})
+        result = Treatment_col.delete_one({'_id': ObjectId(treatment_id)})
         print(f"Deleted count: {result.deleted_count}")  # Debug line to check if deletion was successful
         return result
     except Exception as e:
