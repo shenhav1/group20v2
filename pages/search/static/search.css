@@ -6,10 +6,10 @@ body {
     flex: 1;
 }
 
-.introDiv{
+.introDiv {
     text-align: left;
     justify-content: left;
-     color: #e39c61;
+    color: #e39c61;
     font-size: 40px;
     margin-top: 70px;
     margin-left: 30px;
@@ -64,12 +64,12 @@ button:hover {
 img {
     position: absolute;
     top: 170px;
-    left:50px;
+    left: 50px;
     max-width: 350px;
     max-height: 250px;
 }
 
-.formContainer{
-        place-items: center
+.formContainer {
+    place-items: center
 
 }

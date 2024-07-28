@@ -1,28 +1,28 @@
 {% extends 'base.html' %} {% set page_head_title = 'Search Results' %} {% block
 page_head_css %}
 <link
-	rel="stylesheet"
-	href="{{ url_for('searchResult.static', filename='searchResult.css') }}"
+        rel="stylesheet"
+        href="{{ url_for('searchResult.static', filename='searchResult.css') }}"
 />
 <link
-	rel="stylesheet"
-	href="{{ url_for('base.static', filename='style.css') }}"
+        rel="stylesheet"
+        href="{{ url_for('base.static', filename='style.css') }}"
 />
 {% endblock %} {% block page_body_main_content %}
 <div class="Container">
-	<h1>Here's what we found for you</h1>
-	<span>&nbsp;</span>
-	{% if therapists %} {% for therapist in therapists %}
-	<div class="therapist">
-		<h3>{{ therapist.name }}</h3>
-		<p>{{ therapist.clinicLocation }}</p>
-		<p class="desc">specialization: {{ therapist.specialty }}</p>
-		<p2> *{{ therapist.aboutTherapist }} </p2>
-		<button id="{{ therapist.name }}">view profile</button>
-	</div>
-	{% endfor %} {% else %}
-	<p>No therapists found.</p>
-	{% endif %}
+    <h1>Here's what we found for you</h1>
+    <span>&nbsp;</span>
+    {% if therapists %} {% for therapist in therapists %}
+    <div class="therapist">
+        <h3>{{ therapist.name }}</h3>
+        <p>{{ therapist.clinicLocation }}</p>
+        <p class="desc">specialization: {{ therapist.specialty }}</p>
+        <p2> *{{ therapist.aboutTherapist }}</p2>
+        <button id="{{ therapist.name }}">view profile</button>
+    </div>
+    {% endfor %} {% else %}
+    <p>No therapists found.</p>
+    {% endif %}
 </div>
 {% endblock %} {% block page_body_footer %}
 <p>© 2024 Happy Soul. All rights reserved.</p>

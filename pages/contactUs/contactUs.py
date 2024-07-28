@@ -22,12 +22,11 @@ def index():
             user = get_user_by_email(session.get('email'))
             if user:
                 create_request(datetime.today().strftime('%Y-%m-%d'),
-                    data.get('message'),
-                    session.get('email'),
-                    )
+                               data.get('message'),
+                               session.get('email'),
+                               )
             return jsonify({'success': True, 'redirect': url_for('requestsent.index')})
         else:
             message = "You are not logged in."
             return render_template('contactUs.html', msg=message)
     return render_template('contactUs.html', msg='')
-

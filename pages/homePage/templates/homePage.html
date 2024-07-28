@@ -2,8 +2,8 @@
 {% set page_head_title = 'Happy Soul' %}
 
 {% block page_head_css %}
-    <link rel="stylesheet" href="{{ url_for('homePage.static', filename='homePage.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('homePage.static', filename='homePage.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('base.static', filename='style.css') }}"/>
 {% endblock %}
 
 {% block page_body_main_content %}
@@ -14,21 +14,24 @@
         </h1>
         <p id="intro-text">
             <strong>Your mental well-being is our top priority.
-                We recognize that since October 7 and the "Haravot-Barzel" war in Israel, many individuals have experienced heightened anxiety, stress, and emotional distress.
+                We recognize that since October 7 and the "Haravot-Barzel" war in Israel, many individuals have
+                experienced heightened anxiety, stress, and emotional distress.
                 We offer a safe and supportive environment tailored to your unique needs.
-                At Happy Soul, we are dedicated to helping you navigate through this difficult period, offering the care and guidance you need to reclaim your mental and emotional well-being.
+                At Happy Soul, we are dedicated to helping you navigate through this difficult period, offering the care
+                and guidance you need to reclaim your mental and emotional well-being.
                 Your path to healing starts here.</strong>
         </p>
     </div>
 </div>
 <div class="helpLink">
- <p> Don't know which treatment is right for you? Maybe this can help</p>
-     <button class="Button" onclick="location.href='https://www.ynet.co.il/articles/0,7340,L-5023239,00.html'">Link</button>
+    <p> Don't know which treatment is right for you? Maybe this can help</p>
+    <button class="Button" onclick="location.href='https://www.ynet.co.il/articles/0,7340,L-5023239,00.html'">Link
+    </button>
 </div>
 {% endblock %}
 
 {% block page_body_footer %}
-        <p>© 2024 Happy Soul. All rights reserved.</p>
+<p>© 2024 Happy Soul. All rights reserved.</p>
 {% endblock %}
 
 {% block page_body_js %}

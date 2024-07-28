@@ -10,6 +10,7 @@ treatmenthistory = Blueprint(
     template_folder='templates'
 )
 
+
 # Routes
 @treatmenthistory.route('/treatmenthistory')
 def index():
@@ -22,6 +23,7 @@ def index():
         return render_template('treatmentHistory.html', userData=userData, treatments=treatments)
     else:
         return jsonify({"error": "User not logged in"}), 401
+
 
 # Sample function to retrieve treatments by user email
 def get_treatments_by_user_email_done(email):

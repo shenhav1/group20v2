@@ -6,7 +6,7 @@ body {
     padding: 20px;
 }
 
-h1{
+h1 {
     font-size: 40px;
     font-weight: bold;
     color: #e3aa92;
@@ -91,12 +91,12 @@ ul li {
     margin-bottom: 5px;
 }
 
-.HistoryButton{
+.HistoryButton {
     color: white;
     background-color: #d88a53;
 }
 
-.HistoryButton:hover{
-      color:  #d88a53;
+.HistoryButton:hover {
+    color: #d88a53;
     background-color: white;
 }

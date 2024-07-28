@@ -7,100 +7,99 @@ body {
     min-height: 100vh;
 }
 
-    .signInContainer {
-        display: grid;
-        text-align: left;
-        justify-items: center;
-        align-items: center;
-        border: 4px solid rgba(243, 223, 142, 0.74);
-        background: linear-gradient(to bottom, #e8e2b5, #dab6d6);
-        border-radius: 8%;
-        margin: auto;
-        width: 40%;
-        padding: 0;
-        font-size: 15px;
-    }
+.signInContainer {
+    display: grid;
+    text-align: left;
+    justify-items: center;
+    align-items: center;
+    border: 4px solid rgba(243, 223, 142, 0.74);
+    background: linear-gradient(to bottom, #e8e2b5, #dab6d6);
+    border-radius: 8%;
+    margin: auto;
+    width: 40%;
+    padding: 0;
+    font-size: 15px;
+}
 
-    .signInContainer h2 {
-        font-size: 30px;
-        margin: 20px;
-        text-align: center;
-    }
+.signInContainer h2 {
+    font-size: 30px;
+    margin: 20px;
+    text-align: center;
+}
 
-    .signIn {
-        margin-bottom: 20px;
-    }
+.signIn {
+    margin-bottom: 20px;
+}
 
-    .signIn label {
-        display: block;
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
+.signIn label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
 
-    .signIn input[type="email"],
-    .signIn input[type="password"] {
-        font-family: 'Lucida Grande', Arial, sans-serif;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        font-size: 13px;
-        padding: 10px;
-        width: 100%;
-    }
+.signIn input[type="email"],
+.signIn input[type="password"] {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    padding: 10px;
+    width: 100%;
+}
 
 
-    #signInButton:hover {
-        background-color: white;
-    }
+#signInButton:hover {
+    background-color: white;
+}
 
-    button:hover {
-        background-color: white;
-        color: black;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        font-family: 'Lucida Grande', Arial, sans-serif;
-    }
+button:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Lucida Grande', Arial, sans-serif;
+}
 
-    .signInFg{
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding: 20px;
-  border-radius: 5px;
+.signInFg {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .google, .facebook {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     margin: 5px 10px;
-      justify-content: start;
+    justify-content: start;
 
 }
 
-   .facebook {
-        background-color: #e8e2b5;
-        color: black;
-    }
+.facebook {
+    background-color: #e8e2b5;
+    color: black;
+}
 
-    .google {
-        background-color: #e8e2b5;
-        color: black;
-    }
+.google {
+    background-color: #e8e2b5;
+    color: black;
+}
 
 
-
-    .signButton {
-        height: 40px;
-        width: 120px;
-        background-color: #e8e2b5;
-        border: none;
-        border-radius: 5px;
-        color: black;
-        cursor: pointer;
-        font-size: 16px;
-        padding: 10px;
-        display: grid;
-        justify-items: center;
-        font-family: 'Lucida Grande', Arial, sans-serif;
-        align-items: center;
-    }
+.signButton {
+    height: 40px;
+    width: 120px;
+    background-color: #e8e2b5;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    align-items: center;
+}

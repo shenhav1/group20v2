@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             introText.style.opacity = 1;
         }, 100);
     }
+
     updateWelcomeMessage();
     animateIntroText();
 });

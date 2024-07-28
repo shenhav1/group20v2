@@ -10,8 +10,9 @@ search = Blueprint(
     template_folder='templates'
 )
 
+
 # Routes
-@search.route('/search', methods=['GET','POST'])
+@search.route('/search', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         data = request.get_json()

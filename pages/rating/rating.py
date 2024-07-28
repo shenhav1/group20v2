@@ -10,11 +10,13 @@ rating = Blueprint(
     template_folder='templates'
 )
 
+
 @rating.route('/rating', methods=['GET'])
 def index():
     treatment_id = request.args.get('treatment_id')
     treatment_date = request.args.get('treatment_date')
     return render_template('rating.html', treatment_id=treatment_id, treatment_date=treatment_date)
+
 
 @rating.route('/submit_rating', methods=['POST'])
 def submit_rating():

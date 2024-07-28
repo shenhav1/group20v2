@@ -110,18 +110,19 @@ def get_messages_by_user_id(userId):
         print(f"An error occurred: {e}")
         return []
 
+
 def get_treatments_by_user_email_done(email):
-        try:
-            treatments = Treatment_col.find({'patient': email, 'status': 'done'})
-            treatments_list = list(treatments)
-            if treatments_list:
-                print(f"Treatments found: {treatments_list}")  # Debugging statement
-            else:
-                print("No treatments found")  # Debugging statement
-            return treatments_list
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            return []
+    try:
+        treatments = Treatment_col.find({'patient': email, 'status': 'done'})
+        treatments_list = list(treatments)
+        if treatments_list:
+            print(f"Treatments found: {treatments_list}")  # Debugging statement
+        else:
+            print("No treatments found")  # Debugging statement
+        return treatments_list
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return []
 
 
 def create_user(email, password, first_name, last_name, city, phone_number, birthdate, entitlement):
@@ -228,4 +229,3 @@ def delete_treatment_by_id(treatment_id):
     except Exception as e:
         print(f"Error deleting treatment: {e}")
         return None
-

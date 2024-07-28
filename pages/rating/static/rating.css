@@ -1,5 +1,5 @@
 body {
-   background: url('https://www.tenne.org.il/wp-content/uploads/2021/05/4824-2-1024x518.jpg');
+    background: url('https://www.tenne.org.il/wp-content/uploads/2021/05/4824-2-1024x518.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ textarea {
 
 textarea {
     height: 120px;
-        width: 300px;
+    width: 300px;
 
 }
 
@@ -68,17 +68,17 @@ button:hover {
 }
 
 .feedback-box {
-  position: absolute;
-  top: 20px;
-  right: -500px;
-  padding: 10px;
-  background-color: #ddac98;
-  border: 1px solid #CCC;
-  border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: -500px;
+    padding: 10px;
+    background-color: #ddac98;
+    border: 1px solid #CCC;
+    border-radius: 5px;
     width: 250px;
     text-align: center;
     font-size: 18px;
-       animation: slideIn 1s ease-out;
+    animation: slideIn 1s ease-out;
 }
 
 @keyframes slideIn {

@@ -10,6 +10,7 @@ login = Blueprint(
     template_folder='templates'
 )
 
+
 # Routes
 @login.route('/login', methods=['GET', 'POST'])
 def index():

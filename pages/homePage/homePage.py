@@ -14,4 +14,3 @@ homepage = Blueprint(
 @homepage.route('/homepage')
 def index():
     return render_template('homePage.html')
-

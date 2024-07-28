@@ -10,6 +10,7 @@ signup = Blueprint(
     template_folder='templates'
 )
 
+
 @signup.route('/signup', methods=['GET', 'POST'])
 def index():
     session['pagename'] = 'signUp'
@@ -24,7 +25,7 @@ def index():
                         data.get('phoneNumber'),
                         data.get('dob'),
                         data.get('entitlement')
-            )
+                        )
             return jsonify({'success': True, 'redirect': url_for('login.index')})
         else:
             message = "This email is already signed."

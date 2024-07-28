@@ -9,12 +9,14 @@ searchresult = Blueprint(
     template_folder='templates'
 )
 
+
 # Routes
 @searchresult.route('/searchresult')
 def index():
     # Retrieve search results from the session
     search_results = session.get('search_results', [])
     return render_template('searchResult.html', therapists=search_results)
+
 
 @searchresult.route('/set_therapist_name', methods=['POST'])
 def set_therapist_name():

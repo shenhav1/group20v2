@@ -29,16 +29,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     },
                     body: JSON.stringify(formData)
                 })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    // Redirect to login page upon successful signup
-                    window.location.href = 'login';
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                    alert('There was an error processing your signup. Please try again.');
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        // Redirect to login page upon successful signup
+                        window.location.href = 'login';
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('There was an error processing your signup. Please try again.');
+                    });
 
             }
         });

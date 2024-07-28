@@ -29,23 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(formDataJson)
         })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Network response was not ok.');
-            }
-        })
-        .then(data => {
-            // Clear form after successful submission
-            contactForm.reset();
-            alert('Thank you for your message! We will response as fast as we can.');
-            window.location.href = 'requestsent';
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-            alert('There was an error submitting your message. Please try again.');
-        });
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .then(data => {
+                // Clear form after successful submission
+                contactForm.reset();
+                alert('Thank you for your message! We will response as fast as we can.');
+                window.location.href = 'requestsent';
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                alert('There was an error submitting your message. Please try again.');
+            });
     });
 
     function validateMessage(message) {
